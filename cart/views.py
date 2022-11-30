@@ -48,7 +48,7 @@ def dashboard(request):
         user_obj = user_data_object(user_id,name)
     if request.GET.get('pk')=="2":
         try:
-            data = product.objects.all()[:9]
+            data = product.objects.all()[:18]
         except:
             print("not loaded")
         else:

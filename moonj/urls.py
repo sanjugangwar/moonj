@@ -50,7 +50,7 @@ urlpatterns = [
     path('add_employe/',admin1.add_employe),
     path('success/',car.success),
     path('removeCart/',car.removeCart),
-    path('forgotPassword/',res.forgotPassword)
+    path('forgotPassword/',res.forgotPassword),
 
 
     # path('order_summary')

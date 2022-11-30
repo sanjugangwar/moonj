@@ -429,3 +429,6 @@ def forgotPassword(request):
     return render(request,'registeration/forgotpassword.html')
     
 
+
+
+    
