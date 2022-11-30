@@ -1,0 +1,26 @@
+{% extends 'registeration/Admin_base.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align:center; color:white;background-color: rgba(255,0,0,0.721);"> Product_management</h1>
+<div class="row" style="margin-bottom:5vh;margin-top:5vh">
+  <div class="col-sm-6 col-lg-4">
+    <div class="card border-danger">
+      <div class="card-body">
+        <h1 class="card-title">Add product</h1>
+        <!-- <h4>To Add A New Product Click Here</h4> -->
+        <a href="/add_product" class="btn btn-danger">Add Products</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card border-danger">
+      <div class="card-body">
+        <h1 class="card-title">Manage</h1>
+        <!-- <h4>To Add A New Product Click Here</h4> -->
+        <a href="/inventory_management" class="btn btn-danger">Manage product</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+{% endblock content %}

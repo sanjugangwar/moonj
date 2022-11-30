@@ -1,0 +1,51 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Your Orders</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <!-- product section -->
+      <table border="2" style="width:70vw; margin-left:15vw">
+         <tr>
+            <th>
+               Product image
+            </th>
+            <th>
+               Product Name
+            </th>
+            <th>
+               Quantity
+            </th>
+            <th>
+               Price
+            </th>
+         </tr>
+         {% for x in data1 %}
+         <tr>
+            
+            <td>
+               <img src="/media/{{x.img}}" height="200px" width="200px" style="objject-fit:cover">
+            </td>
+            <td>
+               {{x.product_name }}
+            </td>
+            <td>
+               {{x.quantity}}
+            </td>
+            <td>
+               {{x.price}}
+            </td>
+         </tr>
+         {% endfor %}
+      </table>
+    {% endblock content %}

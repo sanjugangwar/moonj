@@ -1,0 +1,161 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+<section class="h-100 gradient-custom">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center my-4">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Cart items</h5>
+          </div>
+          <div class="card-body">
+            <!-- Single item -->
+            {% for x in data1 %}
+            <div class="row pay">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <!-- Image -->
+                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                  <img src="/media/{{x.img}}"
+                    class="w-100" alt="Blue Jeans Jacket" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(255,0,0, 0.712)"></div>
+                  </a>
+                </div>
+                <!-- Image -->
+              </div>
+
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <!-- Data -->
+                <p><strong>{{ x.product_name }}</strong></p>
+                <p>Color: yellow</p>
+                <p>price: rs {{x.price}}</p>
+                  <a href="/remove_from_cart?id={{x.product_transaction_id}}"> <button class= "btn btn-danger"">Delete</button></a>
+                <!--- Data --->
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <!-- Quantity -->
+                <div class="d-flex mb-4" style="max-width: 300px">
+                  <button class="btn btn-primary" style="background-color:rgba(255, 0, 0, 0.712);" onclick="increment(event)">+
+                  </button>
+
+                  <div class="form-outline">
+                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 4vw;" />
+                    <!-- <label class="form-label" for="form1">Quantity</label> -->
+                  </div>
+                  <button  class="btn btn-primary" style="background-color:rgba(255, 0, 0, 0.712)"
+                    onclick="decrement(event)">
+                    <i >-</i>
+                  </button>
+                </div>
+                <!-- Quantity -->
+
+                <!-- Price -->
+                <p class="text-start text-md-center">
+                  <strong>
+                  </strong>
+                </p>
+                <!-- Price -->
+              </div>
+            </div>
+            <!-- Single item -->
+
+            <hr class="my-4" />
+
+            {% endfor %}
+            <!-- Single item -->
+          </div>
+        </div>
+        {% comment %} <div class="card mb-4">
+          <div class="card-body">
+            <p><strong>Expected shipping delivery</strong></p>
+            <p class="mb-0">20.11.2022 - 24.11.2022</p>
+          </div>
+        </div> {% endcomment %}
+        {% comment %} <div class="card mb-4 mb-lg-0">
+          <div class="card-body">
+            <p><strong>We accept</strong></p>
+             <h3>Cash on Delivery only</h3>
+          </div>
+        </div> {% endcomment %}
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Summary</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Products
+                  <span id="price">price</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                Shipping
+                <span>Delhivery</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                <div>
+                  <strong>Total amount</strong>
+                  <strong>
+                    <p class="mb-0">(including VAT)</p>
+                  </strong>
+                </div>
+                <span><strong id="total_value">1000</strong><strong>&nbsp; inr</strong></span>
+              </li>
+            </ul>
+
+            <a href="/checkout"><button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:rgba(255, 0, 0, 0.712)">
+              Go to checkout
+            </button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function priceHandler(){
+      let elements=document.getElementsByClassName('pay');
+      let final_price=0;
+      let total_quant=0;
+      for(let j=0;j<elements.length;j++){
+        let text=elements[j].childNodes[3].childNodes[7].innerText;
+        let quant=elements[j].childNodes[5].childNodes[3].childNodes[3].childNodes[1].value;
+        quant=parseInt(quant);
+        // console.log(quant);
+        let price=0;
+        for(let i=0;i<text.length;i++){
+          if(text[i]>='0' && text[i]<='9'){
+            price=price*10+parseInt(text[i]);
+          }
+        }
+        // console.log(price);
+        total_quant+=quant;
+        final_price+=quant*price;
+      }
+      // console.log(final_price);
+      document.getElementById('total_value').innerHTML=final_price;
+      document.getElementById('price').innerHTML=total_quant;
+    }
+    priceHandler();
+    function increment(event){
+      let quant=event.path[1].childNodes[3].childNodes[1].value;
+      quant=parseInt(quant);
+      quant++;
+      event.path[1].childNodes[3].childNodes[1].value=quant;
+      priceHandler();
+    }
+    function decrement(event){
+      let quant=event.path[1].childNodes[3].childNodes[1].value;
+      quant=parseInt(quant);
+      if(quant>1)
+      quant--;
+      event.path[1].childNodes[3].childNodes[1].value=quant;
+      priceHandler();
+    }
+  </script>
+</section>
+{% endblock content %}

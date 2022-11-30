@@ -1,0 +1,29 @@
+.my-header{
+  height: 90vh;
+  width: 100vw;
+  background-color: #607b86f2;
+}
+
+.my-row {
+  display: flex;
+}
+
+.my-column {
+  flex: 50%;
+  height: 90vh;
+  width: 100%;
+}
+.my-header-info {
+   height: 30vh;
+   width: 40vw;
+   position: relative;
+   top:10vh;
+   left:5vw;
+   color: white;
+   font-size: 70px;
+   font-weight:bold;
+}
+.header-btn{
+  position:absolute;
+  left:12vw;
+}

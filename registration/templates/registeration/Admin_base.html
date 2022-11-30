@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+   {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Basic -->
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <!-- Site Metas -->
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+   <meta name="author" content="" />
+   <title>Moonj World</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+   <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/checkout.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sanjay.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+</head>
+   <body class="sub_page">
+      <div class="hero_area">
+         <!-- header section strats -->
+         <header class="header_section">
+            <div class="container">
+               <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="/" style="font-size: 30px; font-weight:bold;color:rgba(255, 0, 0, 0.712)">MoonJ</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class=""> </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="/product">Products</a>
+                        </li>
+                        <li class="nav-item">
+                           {% if data.name%}
+                           <a class="nav-link" href="">{{data.name}}</a>
+                           {% else %}
+                           <a class="nav-link" href="/admin_login">Login</a>
+                            {% endif %} 
+                        </li> 
+                        {% comment %} <li class="nav-item">
+                           <a class="nav-link" href="/contact">Contact</a>
+                        </li> {% endcomment %}
+                        <li class="nav-item">
+                           {% if data.name%}
+                           <a class="nav-link" href="/logout">logout</a>
+                            {% endif %} 
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </header>
+      </div>
+     {% block content %}
+    {% endblock content %}
+     <footer class="footer_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4 footer-col">
+                  <div class="footer_contact">
+                     <h4>
+                        Reach at Mnnit
+                     </h4>
+                     <div class="contact_link_box">
+                        <a href="https://www.google.com/maps/@25.4908617,81.8630803,19z">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>
+                        Pg Hostel , Mnnit Campus
+                        </span>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>
+                           9318441731
+                        </span>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <span>
+                           officialmoonj@gmail.com
+                        </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 footer-col">
+                  <div class="footer_detail">
+                     <div class="footer_social">
+                        <a href="">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+               <div class="row">
+                  <div class="col-md-7">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="widget_menu">
+                              <h3>Menu</h3>
+                              <style>
+                                 #foot:hover{
+                                   color:red;
+                                   font-size:20px;
+                                   font-weight:bold;
+                                 }
+                                 #foot{
+                                  color:white;
+                                 }
+                              </style>
+                              <ul>
+                                 <li><a href="/" id="foot">Home</a></li>
+                                 <li><a href="/product" id="foot">Products</a></li>
+                                 <li><a href="/login" id="foot">Login/SignUp</a></li>
+                                 <li><a href="/contact" id="foot">Contact</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+               </div>
+            </div>
+            <div class="footer-info">
+               <div class="col-lg-7 mx-auto px-0">
+                  <p>
+                     All Rights Reserved by Moonj Group
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer section -->
+      <!-- jQery -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- popper js -->
+      <script src="js/popper.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="js/bootstrap.js"></script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+   </body>
+</html>

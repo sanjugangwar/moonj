@@ -1,0 +1,31 @@
+{% extends 'registeration/Admin_base.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align:center; color:white;background-color: rgba(255,0,0,0.721);"> Employee Management </h1>
+<div style="width: 70vw;margin-left:15vw">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Sr. Number</th>
+                <th scope="col">Employee id</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Work</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in data1 %}
+            <tr>
+                <th scope="row">{{x.sr_no}}</th>
+                <td>{{ x.emp_id }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.salary }}</td>
+                <td> <a href="/add_employe"><Button
+                        style="background-color:rgba(255,0,0,0.721);height:5vh;width:6vw; color:white;font-weight: bold;border: none; border-radius: 5%;">Work</Button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

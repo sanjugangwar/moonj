@@ -1,0 +1,50 @@
+{% extends 'registeration/Admin_base.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align:center; color:white;background-color: rgba(255,0,0,0.721);"> Employee Work Done</h1>
+<div style="width: 70vw;margin-left:15vw">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Sr. Number</th>
+                <th scope="col">Product image</th>
+                <th scope="col">Product id</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Category</th>
+                <th scope="col">Product Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td><img src="{% static 'images/p1.jpg' %}" alt="product_image" height="200px" width="200px"></td>
+                <td>1</td>
+                <td>Basket</td>
+                <td>House</td>
+                <td>10</td> 
+                <td>1000</td>
+                <td>Paid</td>
+                <td> <Button
+                        style="background-color:rgba(255,0,0,0.721);height:5vh;width:6vw; color:white;font-weight: bold;border: none; border-radius: 5%;">Pay</Button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><img src="{% static 'images/p3.jpg' %}" alt="product_image" height="200px" width="200px"></td>
+                <td>2</td>
+                <td>Basket</td>
+                <td>House</td>
+                <td>5</td>
+                <td>1000</td>
+                <td>Pending</td>
+                <td> <Button
+                        style="background-color:rgba(255,0,0,0.721);height:5vh;width:6vw; color:white;font-weight: bold;border: none; border-radius: 5%;">Pay</Button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

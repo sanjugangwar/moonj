@@ -1,0 +1,32 @@
+{% extends 'registeration/Admin_base.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align:center; color:white;background-color: rgba(255,0,0,0.721);">Inventory Management</h1>
+
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">serial Number</th>
+        <th scope="col">product_id</th>
+        <th scope="col">Product image</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Available</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in data1 %}
+      <tr>
+        <th scope="row">{{ x.sr_no }}</th>
+        <td>{{ x.product_id }}</td>
+        <td><img src="/media/{{x.img}}" height="200px" width="200px"></td>
+        <td>{{ x.product_name }}</td>
+        {% comment %} <td>{{}}</td> {% endcomment %}
+        <td>{{ x.quantity }}</td>
+        <td><Button style="background-color:rgba(255,0,0,0.721);height:5vh;width:6vw;"><a href="" style="color:white;font-weight:bold">Update</a></Button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

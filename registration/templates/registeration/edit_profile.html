@@ -1,0 +1,29 @@
+{% extends 'registeration/nav.html' %}
+{% block content %}
+         <!-- end header section -->
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Edit Profile</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <form style="width:40vw;margin-left:30vw;">
+         {% csrf_token %}
+      <div class="form-group">
+         <label for="new_name">Enter New Name</label>
+         <input type="text" value="{{ data.name}}" name="name" class="form-control" id="new_name" placeholder="Enter Your New Name">
+         <label for="new_mobile">Enter Your New Phone Number</label>
+         <input type="number" value="{{data.phone }}" name="phone" class="form-control" id="new_mobile" placeholder="Enter Your New Number">
+      </div>
+         <button type="submit" name="updateProfile" value="submit" class="btn btn-danger" style="width:40vw;margin-bottom:3vh;">Submit</button>
+      </form>
+      <!-- footer section -->
+
+{% endblock content %}

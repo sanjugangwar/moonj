@@ -1,0 +1,66 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+      </div>
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Your Profile</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <!-- why section -->
+      <section class="why_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <h1>Hello <Span>User</Span></h1>
+               </div>
+            </div>
+            <hr>
+            <div class="row">
+               <div class="col-5" style="box-shadow:2px 2px 2px 2px rgba(255,0,0,0.721);">
+                  <h2>Your Account</h2>
+                  <div>
+                  <a href="/orders"><button class="btn btn-danger" style="margin-bottom:2vh;width:20vw;">Your Orders</button></a>
+                  </div>
+                  <div>
+                     <div>
+                  <a href="/add_new_address"><button class="btn btn-danger" style="margin-bottom:2vh;width:20vw;">Add a New Address</button></a>
+                  </div>
+                  <div>
+                  <a href="/cart"><button class="btn btn-danger" style="width:20vw;">Your Cart</button></a>
+                  </div>
+                     <br>
+               </div>
+            </div>
+               <div class="col-2"></div>
+               <div class="col-5" style="box-shadow:2px 2px 2px 2px rgba(255,0,0,0.721)">
+                  <h2>Name:{{ data.name }}</h2>
+                  <h2>Mobile:{{ data.phone }}</h2>
+                  <h2>Email:{{ data.email }}</h2>
+                 <!-- <h2>Address:User Address</h2>-->
+               </div>
+         </div>
+            <hr>
+            <div class="row">
+               <div class="col-4">
+
+               </div>
+               <div>
+                  <a href="/edit_your_profile" style="color:white;"><button class="btn btn-danger">Edit Your Prfoile</button></a>
+               </div>
+                <div>
+                  <a href="/change_password" style="color:white"><button class="btn btn-danger" style="margin-left:1vw;">Edit Your PassWord</button></a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end why section -->
+{% endblock content %}

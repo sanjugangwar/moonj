@@ -1,0 +1,27 @@
+{% extends 'registeration/Admin_base.html' %}
+{% load static %}
+{% block content %}
+<div class="frow">
+    <div class="fcolumn">
+        <img src="{% static 'images/login.jpg' %}" alt="login_image" height="100%" width="100%" class="fimg">
+    </div>
+    <div class="fcolumn">
+        <div style="font-size: 40px; position:relative;top:5vh;left:5vw;font-weight: bold; color: rgb(73, 83, 194);"> Hey Admin! <br> Login Form</div>
+        <div class="fform-div">
+        <form action="" method="post">
+           {% csrf_token %}
+            <div class="form-group">
+              <label for="email">User Id:</label>
+              <input type="text" class="form-control" placeholder="Enter email" id="email" name="user_id">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary" value="login" name="adminlogin">login</button>
+            
+          </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

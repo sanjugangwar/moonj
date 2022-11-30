@@ -1,0 +1,46 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+    <div class="frow">
+        <div class="fcolumn">
+            <img src="{% static 'images/login.jpg' %}" alt="login_image" height="100%" width="100%" class="fimg">
+        </div>
+        <div class="fcolumn">
+            <div
+                style="font-size: 40px; position:relative;top:1vh;left:5vw;font-weight: bold; color: rgb(73, 83, 194);"> Be A Part Of<br> Moonj World
+            </div>
+            <div class="fform-div" style="top:3vh;">
+                <form action="" method="post">
+                    {% csrf_token %}
+	                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" required class="form-control" placeholder="Your Name" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" required class="form-control" placeholder="Enter email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" required class="form-control" placeholder="Phone Number" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" required class="form-control" placeholder="Enter password" id="pwd" name="password">
+                    </div>
+                    {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert alert-info">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+      
+                {% endif %}
+                    <button type="submit" class="btn btn-primary" value="signup" name="signup">Submit</button>
+                    <div>Already have an Account <a href="/login">Login</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+   {% endblock content %}

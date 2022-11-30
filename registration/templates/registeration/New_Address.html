@@ -1,0 +1,31 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Add a New Address</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <form style="width:40vw;margin-left:30vw;">
+      <div class="form-group">
+         <label for="building_number">Flat, House no., Building, Company, Apartment</label>
+         <input type="text" name="flat" class="form-control" id="building_number" placeholder="Enter Your Building Number">
+         <label for="street_number">Area, Street, Sector, Village</label>
+         <input type="text" name="area" class="form-control" id="street_number" placeholder="Street Number">
+         <label for="city">Enter Your City</label>
+         <input type="text" name="city" class="form-control" id="city" placeholder="Enter Your City">
+         <label for="pin">Enter Your Pincode</label>
+         <input type="text" name="pincode" class="form-control" id="pin" placeholder="Enter Your Pincode">
+         <button type="submit" name="add_new_address" value="submit" class="btn btn-danger" style="width:40vw;margin-bottom:3vh;">Add This Address</button>
+      </div>
+      </form>
+      <!-- footer section -->
+{% endblock content %}

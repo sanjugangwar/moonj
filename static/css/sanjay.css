@@ -1,0 +1,21 @@
+
+.frow {
+    display: flex;
+    height: 90vh;
+    width: 100vw;
+    background-color: rgb(186, 169, 146,0.3);
+  }
+
+  .fcolumn {
+    flex: 50%;
+  }
+  .fimg{
+    object-fit:cover;
+  }
+
+  .fform-div{
+    position: relative;
+    width: 30vw;
+    top:7vh;
+    left:5vw;
+  }

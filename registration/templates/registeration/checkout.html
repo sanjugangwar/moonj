@@ -1,0 +1,38 @@
+{% extends 'registeration/nav.html' %}
+{% load static %}
+{% block content %}
+      <!-- inner page section -->
+      <section class="inner_page_head">
+         <div class="container_fuild">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <h3>Thanks For Choosing Us</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end inner page section -->
+      <form style="width:40vw;margin-left:30vw;">
+       
+      <div class="form-group">
+      <label for="exampleFormControlSelect2">Select Your Address</label>
+         
+      
+      <select multiple class="form-control"name="Address" id="exampleFormControlSelect2">
+         
+         
+            {% for x in data1 %}
+
+            <option>{{ x.city }}</option>
+         {% endfor %}
+        </select>
+       </div>
+</script>
+
+         <button type="submit" class="btn btn-danger" name="add_new_address" value="1" style="width:40vw;margin-bottom:3vh;">Add a New Address</button>
+         <button type="submit" class="btn btn-danger" name="checkout" value="1" style="width:40vw; margin-bottom:2vh">Place Your Order</button>
+      </form>      
+      <!-- footer section -->
+{% endblock content %}
